@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repotrt List</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Reports</h2>
+    <ul>
+        {% for report in reports %}
+            <li><a href="{% url 'view_report' report.id %}">Report for {{ report.vehicle }} ({{ report.start_date }} - {{ report.end_date }})</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_report' %}">Create New Report</a>
+{% endblock %}
+
+</body>
+</html>

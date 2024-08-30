@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Detail</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Report Detail</h2>
+
+<h3>Service History</h3>
+{% if report.service_history %}
+    <ul>
+        {% for service in report.service_history %}
+            <li>{{ service.vehicle }} - {{ service.service_date }} - {{ service.service_type }} - ${{ service.cost }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No service history available for this report.</p>
+{% endif %}
+
+{% if report.total_cost %}
+    <h3>Total Cost: ${{ report.total_cost }}</h3>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>

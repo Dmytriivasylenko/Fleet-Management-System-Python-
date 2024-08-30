@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your fleet of vehicles and drivers with our comprehensive Fleet Management System.">
+    <title>Fleet Management - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #444;
+        }
+
+        .navbar li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center; /* Вирівнювання тексту по центру */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #666;
+        }
+
+        .quick-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .quick-links li {
+            margin: 10px 0;
+        }
+
+        .quick-links a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fleet Management System</h1>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul class="navbar">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'vehicle_list' %}">Vehicles</a></li>
+            <li><a href="{% url 'service_history_list' %}">Service History</a></li>
+            <li><a href="{% url 'driver_list' %}">Drivers</a></li>
+            <li><a href="{% url 'report_list' %}">Reports</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="content">
+            <h2>Welcome to the Fleet Management System</h2>
+            <p>Manage your fleet of vehicles, drivers, and service records efficiently and effectively.</p>
+
+            <h3>Quick Links</h3>
+            <ul class="quick-links">
+                <li><a href="{% url 'vehicle_list' %}">View Vehicles</a></li>
+                <li><a href="{% url 'service_history_list' %}">View Service History</a></li>
+                <li><a href="{% url 'driver_list' %}">View Drivers</a></li>
+                <li><a href="{% url 'report_list' %}">View Reports</a></li>
+            </ul>
+
+        </section>
+    </main>
+</body>
+</html>
