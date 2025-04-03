@@ -21,3 +21,5 @@ A comprehensive fleet management system built with Django for tracking vehicles,
 **Backend**  
 ```python
 "Django 4.0", "Django REST Framework", "PostgreSQL", "Celery (async tasks)"
+
+
