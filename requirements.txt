@@ -1,20 +1,20 @@
-# Вказуємо базовий образ
+# Specify the base image
 FROM python:3.11
 
-# Встановлюємо робочу директорію в контейнері
+# Set the working directory inside the container
 WORKDIR /app
 
-# Копіюємо файл вимог
+# Copy the requirements file
 COPY requirements.txt /app/
 
-# Встановлюємо залежності
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копіюємо весь проект у контейнер
+# Copy the entire project into the container
 COPY . /app/
 
-# Виконуємо міграції бази даних
+# Run database migrations
 RUN python manage.py migrate
 
-# Вказуємо команду для запуску сервера
+# Specify the command to run the server
 CMD ["gunicorn", "fleet.wsgi:application", "--bind", "0.0.0.0:8000"]
